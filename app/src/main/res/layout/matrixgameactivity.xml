@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MatrixGameActivity">
+
+    <TextView
+        android:id="@+id/textViewcreator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/maroon"
+        android:textSize="10sp"
+        android:text="@string/creator"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SmallSp" />
+
+    <LinearLayout
+        android:id="@+id/linearlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewcreator">
+
+        <EditText
+            android:id="@+id/editText111"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:fontFamily="@font/timesnewromanitalic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:backgroundTint="@color/maroon"
+            android:hint="@string/hint0"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill,LabelFor" />
+
+        <EditText
+            android:id="@+id/editText212"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:fontFamily="@font/timesnewromanitalic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:backgroundTint="@color/maroon"
+            android:hint="@string/hint0"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill,LabelFor" />
+
+        <EditText
+            android:id="@+id/editText313"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:fontFamily="@font/timesnewromanitalic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:backgroundTint="@color/maroon"
+            android:hint="@string/hint0"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill,LabelFor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout1">
+
+        <EditText
+            android:id="@+id/editText421"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:fontFamily="@font/timesnewromanitalic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:backgroundTint="@color/maroon"
+            android:hint="@string/hint0"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill,LabelFor" />
+
+        <EditText
+            android:id="@+id/editText522"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:fontFamily="@font/timesnewromanitalic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:backgroundTint="@color/maroon"
+            android:hint="@string/hint0"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill,LabelFor" />
+
+        <EditText
+            android:id="@+id/editText623"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:fontFamily="@font/timesnewromanitalic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:backgroundTint="@color/maroon"
+            android:hint="@string/hint0"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill,LabelFor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout2">
+
+        <EditText
+            android:id="@+id/editText731"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:fontFamily="@font/timesnewromanitalic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:backgroundTint="@color/maroon"
+            android:hint="@string/hint0"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill,LabelFor" />
+
+        <EditText
+            android:id="@+id/editText832"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:fontFamily="@font/timesnewromanitalic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:backgroundTint="@color/maroon"
+            android:hint="@string/hint0"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill,LabelFor" />
+
+        <EditText
+            android:id="@+id/editText933"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:fontFamily="@font/timesnewromanitalic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:backgroundTint="@color/maroon"
+            android:hint="@string/hint0"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:inputType="numberDecimal"
+            tools:ignore="Autofill,LabelFor" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button1play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onclickplay"
+        android:fontFamily="@font/timesnewroman"
+        android:background="@drawable/redbutton"
+        android:textSize="24sp"
+        android:text="@string/play"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout3">
+    </Button>
+
+    <TextView
+        android:id="@+id/textView1result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/timesnewroman"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button1play" />
+</androidx.constraintlayout.widget.ConstraintLayout>
