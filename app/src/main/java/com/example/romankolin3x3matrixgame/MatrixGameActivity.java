@@ -50,7 +50,7 @@ public class MatrixGameActivity extends AppCompatActivity
             Toast.makeText(getApplicationContext(), "Заполните все поля", Toast.LENGTH_LONG).show();
         else
         {
-            int e11, e12, e13, e21, e22, e23, e31, e32, e33, min1, min2, min3, max1, max2, max3, maxmin, minmax;
+            int e11, e12, e13, e21, e22, e23, e31, e32, e33, min1, min2, min3, max1, max2, max3, maximin, minimax;
             double p1, p2, p3, q1, q2, q3, pg1i, pg2i, pg1, pg2;
             String sp;
 
@@ -70,15 +70,16 @@ public class MatrixGameActivity extends AppCompatActivity
             max1 = MaxElement(e11, e21, e31);
             max2 = MaxElement(e12, e22, e32);
             max3 = MaxElement(e13, e23, e33);
-            maxmin = MaxElement(min1, min2, min3);
-            minmax = MinElement(max1, max2, max3);
-            if (maxmin == minmax)
+            maximin = MaxElement(min1, min2, min3);
+            minimax = MinElement(max1, max2, max3);
+            if (maximin == minimax)
             {
                 sp = "Есть";
 
-                textView1result.setText("Максимин = " + maxmin + "\n" +
-                        "Минимакс = " + minmax + "\n" +
-                        "Седловая точка – " + sp);
+                textView1result.setText("Максимин = " + maximin + "\n" +
+                        "Минимакс = " + minimax + "\n" +
+                        "Седловая точка – " + sp + "\n" +
+                        "Цена игры = " + maximin);
             }
             else
             {
@@ -178,8 +179,8 @@ public class MatrixGameActivity extends AppCompatActivity
                 q3 = (double)Arrays.stream(pl2).filter("y"::equals).count() / 20;
 
                 DecimalFormat df = new DecimalFormat("#.##");
-                textView1result.setText("Максимин = " + maxmin + "\n" +
-                        "Минимакс = " + minmax + "\n" +
+                textView1result.setText("Максимин = " + maximin + "\n" +
+                        "Минимакс = " + minimax + "\n" +
                         "Седловая точка – " + sp + "\n" +
                         "Вероятности первой стратегии = " + NumberWithoutZeroInTheEnd(p1) + ", " + NumberWithoutZeroInTheEnd(p2) + ", " + NumberWithoutZeroInTheEnd(p3) + "\n" +
                         "Вероятности второй стратегии = " + NumberWithoutZeroInTheEnd(q1) + ", " + NumberWithoutZeroInTheEnd(q2) + ", " + NumberWithoutZeroInTheEnd(q3) + "\n" +
