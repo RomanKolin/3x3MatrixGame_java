@@ -73,110 +73,118 @@ public class MatrixGameActivity extends AppCompatActivity
             maxmin = MaxElement(min1, min2, min3);
             minmax = MinElement(max1, max2, max3);
             if (maxmin == minmax)
+            {
                 sp = "Есть";
+
+                textView1result.setText("Максимин = " + maxmin + "\n" +
+                        "Минимакс = " + minmax + "\n" +
+                        "Седловая точка – " + sp);
+            }
             else
+            {
                 sp = "Отсутствует";
 
-            int[] p1a = new int[20];
-            int[] p1b = new int[20];
-            int[] p1c = new int[20];
-            int[] p2a = new int[20];
-            int[] p2b = new int[20];
-            int[] p2y = new int[20];
-            String[] pl1 = new String[20];
-            String[] pl2 = new String[20];
-            p1a[0] = e11;
-            p1b[0] = e21;
-            p1c[0] = e31;
-            p2a[0] = e11;
-            p2b[0] = e12;
-            p2y[0] = e13;
-            pl1[0] = "A";
-            pl2[0] = "a";
-            pg1 = MaxElement(e11, e21, e31);
-            pg2 = MinElement(e11, e12, e13);
-            for (int i = 1; i < 20; i++)
-            {
-                if (MaxElement(p1a[i - 1], p1b[i - 1], p1c[i - 1]) == p1a[i - 1])
-                    pl1[i] = "A";
-                else if (MaxElement(p1a[i - 1], p1b[i - 1], p1c[i - 1]) == p1b[i - 1])
-                    pl1[i] = "B";
-                else
-                    pl1[i] = "C";
-                if (MinElement(p2a[i - 1], p2b[i - 1], p2y[i - 1]) == p2a[i - 1])
-                    pl2[i] = "a";
-                else if (MinElement(p2a[i - 1], p2b[i - 1], p2y[i - 1]) == p2b[i - 1])
-                    pl2[i] = "b";
-                else
-                    pl2[i] = "y";
+                int[] p1a = new int[20];
+                int[] p1b = new int[20];
+                int[] p1c = new int[20];
+                int[] p2a = new int[20];
+                int[] p2b = new int[20];
+                int[] p2y = new int[20];
+                String[] pl1 = new String[20];
+                String[] pl2 = new String[20];
+                p1a[0] = e11;
+                p1b[0] = e21;
+                p1c[0] = e31;
+                p2a[0] = e11;
+                p2b[0] = e12;
+                p2y[0] = e13;
+                pl1[0] = "A";
+                pl2[0] = "a";
+                pg1 = MaxElement(e11, e21, e31);
+                pg2 = MinElement(e11, e12, e13);
+                for (int i = 1; i < 20; i++)
+                {
+                    if (MaxElement(p1a[i - 1], p1b[i - 1], p1c[i - 1]) == p1a[i - 1])
+                        pl1[i] = "A";
+                    else if (MaxElement(p1a[i - 1], p1b[i - 1], p1c[i - 1]) == p1b[i - 1])
+                        pl1[i] = "B";
+                    else
+                        pl1[i] = "C";
+                    if (MinElement(p2a[i - 1], p2b[i - 1], p2y[i - 1]) == p2a[i - 1])
+                        pl2[i] = "a";
+                    else if (MinElement(p2a[i - 1], p2b[i - 1], p2y[i - 1]) == p2b[i - 1])
+                        pl2[i] = "b";
+                    else
+                        pl2[i] = "y";
 
-                if (pl2[i].equals("a"))
-                {
-                    p1a[i] = p1a[i - 1] + e11;
-                    p1b[i] = p1b[i - 1] + e21;
-                    p1c[i] = p1c[i - 1] + e31;
+                    if (pl2[i].equals("a"))
+                    {
+                        p1a[i] = p1a[i - 1] + e11;
+                        p1b[i] = p1b[i - 1] + e21;
+                        p1c[i] = p1c[i - 1] + e31;
+                    }
+                    else if (pl2[i].equals("b"))
+                    {
+                        p1a[i] = p1a[i - 1] + e12;
+                        p1b[i] = p1b[i - 1] + e22;
+                        p1c[i] = p1c[i - 1] + e32;
+                    }
+                    else
+                    {
+                        p1a[i] = p1a[i - 1] + e13;
+                        p1b[i] = p1b[i - 1] + e23;
+                        p1c[i] = p1c[i - 1] + e33;
+                    }
+                    if (pl1[i].equals("A"))
+                    {
+                        p2a[i] = p2a[i - 1] + e11;
+                        p2b[i] = p2b[i - 1] + e12;
+                        p2y[i] = p2y[i - 1] + e13;
+                    }
+                    else if (pl1[i].equals("B"))
+                    {
+                        p2a[i] = p2a[i - 1] + e21;
+                        p2b[i] = p2b[i - 1] + e22;
+                        p2y[i] = p2y[i - 1] + e23;
+                    }
+                    else
+                    {
+                        p2a[i] = p2a[i - 1] + e31;
+                        p2b[i] = p2b[i - 1] + e32;
+                        p2y[i] = p2y[i - 1] + e33;
+                    }
+
+                    pg1i = (double)MaxElement(p1a[i], p1b[i], p1c[i]) / (i + 1);
+                    pg2i = (double)MinElement(p2a[i], p2b[i], p2y[i]) / (i + 1);
+                    if (pg1 > pg1i)
+                        pg1 = pg1i;
+                    if (pg2 < pg2i)
+                        pg2 = pg2i;
                 }
-                else if (pl2[i].equals("b"))
+                if (pg1 > pg2)
                 {
-                    p1a[i] = p1a[i - 1] + e12;
-                    p1b[i] = p1b[i - 1] + e22;
-                    p1c[i] = p1c[i - 1] + e32;
-                }
-                else
-                {
-                    p1a[i] = p1a[i - 1] + e13;
-                    p1b[i] = p1b[i - 1] + e23;
-                    p1c[i] = p1c[i - 1] + e33;
-                }
-                if (pl1[i].equals("A"))
-                {
-                    p2a[i] = p2a[i - 1] + e11;
-                    p2b[i] = p2b[i - 1] + e12;
-                    p2y[i] = p2y[i - 1] + e13;
-                }
-                else if (pl1[i].equals("B"))
-                {
-                    p2a[i] = p2a[i - 1] + e21;
-                    p2b[i] = p2b[i - 1] + e22;
-                    p2y[i] = p2y[i - 1] + e23;
-                }
-                else
-                {
-                    p2a[i] = p2a[i - 1] + e31;
-                    p2b[i] = p2b[i - 1] + e32;
-                    p2y[i] = p2y[i - 1] + e33;
+                    double temp;
+
+                    temp = pg1;
+                    pg1 = pg2;
+                    pg2 = temp;
                 }
 
-                pg1i = (double)MaxElement(p1a[i], p1b[i], p1c[i]) / (i + 1);
-                pg2i = (double)MinElement(p2a[i], p2b[i], p2y[i]) / (i + 1);
-                if (pg1 > pg1i)
-                    pg1 = pg1i;
-                if (pg2 < pg2i)
-                    pg2 = pg2i;
+                p1 = (double)Arrays.stream(pl1).filter("A"::equals).count() / 20;
+                p2 = (double)Arrays.stream(pl1).filter("B"::equals).count() / 20;
+                p3 = (double)Arrays.stream(pl1).filter("C"::equals).count() / 20;
+                q1 = (double)Arrays.stream(pl2).filter("a"::equals).count() / 20;
+                q2 = (double)Arrays.stream(pl2).filter("b"::equals).count() / 20;
+                q3 = (double)Arrays.stream(pl2).filter("y"::equals).count() / 20;
+
+                DecimalFormat df = new DecimalFormat("#.##");
+                textView1result.setText("Максимин = " + maxmin + "\n" +
+                        "Минимакс = " + minmax + "\n" +
+                        "Седловая точка – " + sp + "\n" +
+                        "Вероятности первой стратегии = " + NumberWithoutZeroInTheEnd(p1) + ", " + NumberWithoutZeroInTheEnd(p2) + ", " + NumberWithoutZeroInTheEnd(p3) + "\n" +
+                        "Вероятности второй стратегии = " + NumberWithoutZeroInTheEnd(q1) + ", " + NumberWithoutZeroInTheEnd(q2) + ", " + NumberWithoutZeroInTheEnd(q3) + "\n" +
+                        "Цена игры = (" + df.format(pg1) + "; " + df.format(pg2) + ")");
             }
-            if (pg1 > pg2)
-            {
-                double temp;
-
-                temp = pg1;
-                pg1 = pg2;
-                pg2 = temp;
-            }
-
-            p1 = (double)Arrays.stream(pl1).filter("A"::equals).count() / 20;
-            p2 = (double)Arrays.stream(pl1).filter("B"::equals).count() / 20;
-            p3 = (double)Arrays.stream(pl1).filter("C"::equals).count() / 20;
-            q1 = (double)Arrays.stream(pl2).filter("a"::equals).count() / 20;
-            q2 = (double)Arrays.stream(pl2).filter("b"::equals).count() / 20;
-            q3 = (double)Arrays.stream(pl2).filter("y"::equals).count() / 20;
-
-            DecimalFormat df = new DecimalFormat("#.##");
-            textView1result.setText("Максимин = " + maxmin + "\n" +
-                                    "Минимакс = " + minmax + "\n" +
-                                    "Седловая точка – " + sp + "\n" +
-                                    "Вероятности первой стратегии = " + NumberWithoutZeroInTheEnd(p1) + ", " + NumberWithoutZeroInTheEnd(p2) + ", " + NumberWithoutZeroInTheEnd(p3) + "\n" +
-                                    "Вероятности второй стратегии = " + NumberWithoutZeroInTheEnd(q1) + ", " + NumberWithoutZeroInTheEnd(q2) + ", " + NumberWithoutZeroInTheEnd(q3) + "\n" +
-                                    "Цена игры = (" + df.format(pg1) + "; " + df.format(pg2) + ")");
         }
     }
 
