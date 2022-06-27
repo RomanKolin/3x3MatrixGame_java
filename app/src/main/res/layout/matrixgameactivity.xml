@@ -39,7 +39,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             tools:ignore="Autofill,LabelFor" />
 
         <EditText
@@ -54,7 +54,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             tools:ignore="Autofill,LabelFor" />
 
         <EditText
@@ -69,7 +69,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             tools:ignore="Autofill,LabelFor" />
     </LinearLayout>
 
@@ -94,7 +94,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             tools:ignore="Autofill,LabelFor" />
 
         <EditText
@@ -109,7 +109,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             tools:ignore="Autofill,LabelFor" />
 
         <EditText
@@ -124,7 +124,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             tools:ignore="Autofill,LabelFor" />
     </LinearLayout>
 
@@ -149,7 +149,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             tools:ignore="Autofill,LabelFor" />
 
         <EditText
@@ -164,7 +164,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             tools:ignore="Autofill,LabelFor" />
 
         <EditText
@@ -179,7 +179,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             tools:ignore="Autofill,LabelFor" />
     </LinearLayout>
 
